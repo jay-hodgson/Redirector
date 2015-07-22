@@ -30,6 +30,7 @@ public class RedirectorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 		//redirect to url in params
 		String url = req.getParameter(URL_PARAM);
+		response.addHeader("Access-Control-Allow-Origin", "*");
 		response.sendRedirect(url);
 	}
 	
